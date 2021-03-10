@@ -23,64 +23,66 @@
 	<link rel="stylesheet" href="css/menuDinamico.css">
 </head>
 <body>
+	<div id="principal">
+		<div id="menuDinamico">
+			<nav class="navbar navbar-expand-lg bg-light navbar-light">
+				<div class="menu">
+					<ul class="nav navtab justify-content:center flex-wrap:wrap margin:auto ">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sección A</a>
+							<div class="dropdown-menu" id="submenuA"> 
+								<a v-for="a in seccionA" class="dropdown-item" href="#">{{a}}</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item"  href="#">Items personalizados {{texto}}</a>
+							</div>
+						</li>
 
-	<div id="menuDinamico">
-		<nav class="navbar navbar-expand-lg bg-light navbar-light">
-			<div class="menu">
-				<ul class="nav navtab justify-content:center flex-wrap:wrap margin:auto ">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sección A</a>
-						<div class="dropdown-menu" id="submenuA"> 
-							<a v-for="a in seccionA" class="dropdown-item" href="#">{{a}}</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Items personalizados</a>
-						</div>
-					</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sección B</a>
+							<div class="dropdown-menu" id="submenuB">
+								<a v-for="b in seccionB" class="dropdown-item" href="#">{{b}}</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Items personalizados</a>
+							</div>
+						</li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sección B</a>
-						<div class="dropdown-menu" id="submenuB">
-							<a v-for="b in seccionB" class="dropdown-item" href="#">{{b}}</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Items personalizados</a>
-						</div>
-					</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sección C</a>
+							<div  class="dropdown-menu" id="submenuC">
+								<a v-for="c in seccionC" class="dropdown-item" href="#">{{c}}</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Items personalizados</a>
+									
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Sección C</a>
-						<div  class="dropdown-menu" id="submenuC">
-							<a v-for="c in seccionC" class="dropdown-item" href="#">{{c}}</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Items personalizados</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		<!---------------------------- F O R M U L A R I O ----------------------------->
+
+		<div id="cajaFormulario">
+			<div id="formulario">F O R M U L A R I O
+					<select  class="mdb-select md-form" id="sel-select"  v-model="selected" v-on:change="change">
+						<option value="" disabled selected>Secciones</option>
+						<option value="1">Sección A</option>
+						<option value="2">Sección B</option>
+						<option value="3">Sección C</option>
+					</select>
+					
+					<p>{{selected}}</p>
+				
+				<input type="text" maxlength="20" id="tx-submenu" placeholder="submenu" v-model="texto">
+				<button type="button" name="" id="bt-agregar" class="btn btn-primary btn-light" v-on:click="click" >Agregar submenú</button>
+			</div>	
+		</div>
 	</div>
-
-	<!---------------------------- F O R M U L A R I O ----------------------------->
-
-	<div id="cajaFormulario">
-		<div id="formulario">F O R M U L A R I O
-				<select  class="mdb-select md-form" id="sel-select"  v-model="selected">
-					<option value="" disabled selected>Secciones</option>
-					<option value="1">Sección A</option>
-					<option value="2">Sección B</option>
-					<option value="3">Sección C</option>
-				</select>
-			
-			
-			<input type="text" maxlength="20" id="tx-submenu" placeholder="submenu" v-model="texto">
-			<button type="button" name="" id="bt-agregar" class="btn btn-primary btn-light">Agregar submenú</button>
-		</div>	
-	</div>
-
 	<!--------------------------------- JS ------------------------------------------->
 	
 	<script src="js/menuDinamico.js"></script>
-	<script>Vue.createApp(appMenu).mount("#menuDinamico")</script>	
-	<script>Vue.createApp(appFormulario).mount("#cajaFormulario")</script>	
+	<script>Vue.createApp(appMenu).mount("#principal")</script>	
+
 	
 </body>
 </html>
