@@ -3,7 +3,7 @@
 }
 
 body{
-	background-color: darkslategrey;
+	background-color: rgb(163, 186, 223);
 }
 .menu{ display:flex;
 	flex-wrap: wrap;
@@ -19,27 +19,39 @@ body{
 }
 
 li{
-	padding:12px;
+	padding:20px;
+	
+}
+
+
+li>a{
+	color:white;
+	font-weight: bolder;
+	font-size: larger;
 }
 
 #formulario{
-display:flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center;
-border: rgb(149, 182, 219) 1px solid;
-height: 300px;
-width: 300px;
-font-weight: bold;
-color:rgb(161, 194, 206);
-box-shadow: 5px 5px 4px #888888;
-padding-bottom: 30px;
-padding-top:30px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border: rgb(66, 76, 88) 1px solid;
+	height: 300px;
+	width: 300px;
+	font-weight: bold;
+	color:rgb(66, 76, 88);
+	box-shadow: 5px 5px 4px #888888;
+	padding-bottom: 30px;
+	padding-top:30px;
 }
 
 #sel-select,#tx-submenu{
 	width:158px;
 	font-size: large;
 	
+}
+
+input {
+	text-transform:lowercase;
 }
 
